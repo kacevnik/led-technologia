@@ -1,5 +1,12 @@
 jQuery(document).ready(function ($) {		
-	$('.section_3').css({'background-position-x': ($(window).width() - 1200)/2 -365 + 'px'});
-
-	$('.footer_menu ul').css({'margin-left': ($('.footer_menu').width()-$('.footer_menu ul').width())/2+'px'});
+	$('.search-icon').click(function(event) {
+		if($(this).find('.fa').hasClass('fa-search')){
+			$(this).parent().find('.search-form').fadeIn(400);
+			$(this).find('.fa-search').removeClass('fa-search').addClass('fa-close');
+		}
+		else if($(this).find('.fa').hasClass('fa-close')){
+			$(this).parent().find('.search-form').fadeOut(400);
+			$(this).find('.fa-close').removeClass('fa-close').addClass('fa-search');
+		}
+	});
 });
