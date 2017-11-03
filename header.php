@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/style.css">
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> id="fromTop">
 	<header id="header" class="header-skin-transparent">
     	<div id="topbar-wrapper">
 			<div class="container">

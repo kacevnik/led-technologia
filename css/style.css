@@ -382,3 +382,44 @@ ul.primary-menu > li:hover > a::after {
     line-height: 50px;
 }
 
+footer {
+    background-color: #2a2f35;
+    color: #b8b8b8;
+}
+
+footer a:hover, footer a:focus {
+    text-decoration: none;
+    outline: none;
+    color: #fdbd10;
+}
+
+footer a {
+    color: #b8b8b8;
+}
+
+#copyright-wrapper {
+    padding: 25px 0;
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.scrollTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+}
+
+.scrollTop a i {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 1em;
+    color: #fff;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
