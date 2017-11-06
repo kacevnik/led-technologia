@@ -198,13 +198,13 @@
 <section id="slider_logo">
 	<div class="container">
 		<div class="row">
-			<div id="slider">
-				<div class="col-xs-2"><img src="http://wpindustry.rashedamins.com/wp-content/uploads/2017/08/client-1-1-150x77.png" alt=""></div>
-				<div class="col-xs-2"><img src="http://wpindustry.rashedamins.com/wp-content/uploads/2017/08/client-1-1-150x77.png" alt=""></div>
-				<div class="col-xs-2"><img src="http://wpindustry.rashedamins.com/wp-content/uploads/2017/08/client-1-1-150x77.png" alt=""></div>
-				<div class="col-xs-2"><img src="http://wpindustry.rashedamins.com/wp-content/uploads/2017/08/client-1-1-150x77.png" alt=""></div>
-				<div class="col-xs-2"><img src="http://wpindustry.rashedamins.com/wp-content/uploads/2017/08/client-1-1-150x77.png" alt=""></div>
-				<div class="col-xs-2"><img src="http://wpindustry.rashedamins.com/wp-content/uploads/2017/08/client-1-1-150x77.png" alt=""></div>
+			<div id="slider" class="owl-carousel">
+				<div class="item"><img src="http://wpindustry.rashedamins.com/wp-content/uploads/2017/08/client-1-1-150x77.png" alt=""></div>
+				<div class="item"><img src="http://wpindustry.rashedamins.com/wp-content/uploads/2017/08/logo-1.png" alt=""></div>
+				<div class="item"><img src="http://wpindustry.rashedamins.com/wp-content/uploads/2017/08/client-2-1-150x77.png" alt=""></div>
+				<div class="item"><img src="http://wpindustry.rashedamins.com/wp-content/uploads/2017/08/logo-2.png" alt=""></div>
+				<div class="item"><img src="http://wpindustry.rashedamins.com/wp-content/uploads/2017/08/logo-1.png" alt=""></div>
+				<div class="item"><img src="http://wpindustry.rashedamins.com/wp-content/uploads/2017/08/client-2.png" alt=""></div>
 			</div>
 		</div>
 	</div>
