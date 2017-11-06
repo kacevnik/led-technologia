@@ -567,4 +567,51 @@ footer a {
     color: #717f86;
 }
 
+.bg_offer{
+	background-color: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    padding: 70px 0;
+}
+
+#offer h2{
+	text-align: center;
+	font-weight: 600;
+}
+
+#offer .header{
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+#offer{
+	background-attachment: fixed;
+}
+
+#offer .item{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#offer .icon{
+    color: #fff;
+    display: block;
+    text-align: center;
+    font-size: 100px;
+}
+
+#offer .icon:hover{
+    text-decoration: none;
+    color: #fdbd10;
+}
+
+#offer .icon h6{
+    margin: 15px;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+#slider_logo{
+	padding: 40px 0;
+}
+
 

@@ -137,24 +137,75 @@
 	</div>
 </section>
 
-<section id="offer">
-	<div class="container">
-		<h2>Наши приимущества</h2>
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-				<p><i></i></p>
-				<p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam.</p>
+<section id="offer" data-stellar-background-ratio="0.1" style="background: url('http://led.joomlamix.ru/wp-content/uploads/2017/11/slider01.jpg');">
+	<div class="bg_offer">
+		<div class="container">
+			<h2>Наши приимущества</h2>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 header">
+					<p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 item">
+					<a class="icon" href="">
+						<i class="fa fa-diamond" aria-hidden="true"></i>
+						<h6>Лучшие на рынке</h6>
+					</a>
+					<p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali</p>				
+				</div>
+				<div class="col-md-4 item">
+					<a class="icon" href="">
+						<i class="fa fa-tachometer" aria-hidden="true"></i>
+						<h6>Скорость работы</h6>
+					</a>
+					<p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali</p>
+				</div>
+				<div class="col-md-4 item">
+					<a class="icon" href="">
+						<i class="fa fa-gift" aria-hidden="true"></i>
+						<h6>Бонусы</h6>
+					</a>
+					<p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali</p>
+				</div>
+			</div>		
+			<div class="row">
+				<div class="col-md-4 item">
+					<a class="icon" href="">
+						<i class="fa fa-users" aria-hidden="true"></i>
+						<h6>Проффесиональная команда</h6>
+					</a>
+					<p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali</p>
+				</div>
+				<div class="col-md-4 item">
+					<a class="icon" href="">
+						<i class="fa fa-money" aria-hidden="true"></i>
+						<h6>Конкурентные цены</h6>
+					</a>
+					<p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali</p>
+				</div>
+				<div class="col-md-4 item">
+					<a class="icon" href="">
+						<i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+						<h6>Производство</h6>
+					</a>
+					<p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali</p>
+				</div>
 			</div>
 		</div>
+	</div>
+</section>
+<section id="slider_logo">
+	<div class="container">
 		<div class="row">
-			<div class="col-md-4"></div>
-			<div class="col-md-4"></div>
-			<div class="col-md-4"></div>
-		</div>		
-		<div class="row">
-			<div class="col-md-4"></div>
-			<div class="col-md-4"></div>
-			<div class="col-md-4"></div>
+			<div id="slider">
+				<div class="col-xs-2"><img src="http://wpindustry.rashedamins.com/wp-content/uploads/2017/08/client-1-1-150x77.png" alt=""></div>
+				<div class="col-xs-2"><img src="http://wpindustry.rashedamins.com/wp-content/uploads/2017/08/client-1-1-150x77.png" alt=""></div>
+				<div class="col-xs-2"><img src="http://wpindustry.rashedamins.com/wp-content/uploads/2017/08/client-1-1-150x77.png" alt=""></div>
+				<div class="col-xs-2"><img src="http://wpindustry.rashedamins.com/wp-content/uploads/2017/08/client-1-1-150x77.png" alt=""></div>
+				<div class="col-xs-2"><img src="http://wpindustry.rashedamins.com/wp-content/uploads/2017/08/client-1-1-150x77.png" alt=""></div>
+				<div class="col-xs-2"><img src="http://wpindustry.rashedamins.com/wp-content/uploads/2017/08/client-1-1-150x77.png" alt=""></div>
+			</div>
 		</div>
 	</div>
 </section>

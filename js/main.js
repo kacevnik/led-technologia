@@ -10,6 +10,8 @@ jQuery(document).ready(function ($) {
 		}
 	});
 
+	$.stellar();
+
 	//Плавная прокрутка
   	$("a[href*='#']").bind("click", function(e){
 		var anchor = $(this);
