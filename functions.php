@@ -10,13 +10,14 @@ set_post_thumbnail_size(250, 150); // Размер миниатюр 250x150
 add_image_size('big-thumb', 400, 400, true); // Ещё один размер миниатюры
 
 register_sidebar(array(
-	'name' => 'Колонка слева', // Название сайдбара
+	'name' => 'Сайтбар', // Название сайдбара
 	'id' => "left-sidebar", // Идентификатор
-	'description' => 'Обычная колонка в сайдбаре',
+	'class' => 'sidebar',	
+	'description' => 'Сайтбар - колонка слева или справа',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">', // До виджета
 	'after_widget' => "</div>\n", // После виджета
-	'before_title' => '<span class="widgettitle">', //  До заголовка виджета
-	'after_title' => "</span>\n", //  После заголовка виджета
+	'before_title' => '<h2 class="widgettitle">', //  До заголовка виджета
+	'after_title' => "</h2>\n", //  После заголовка виджета
 ));
 
 class clean_comments_constructor extends Walker_Comment { // класс, который собирает всю структуру комментов

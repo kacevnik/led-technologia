@@ -13,7 +13,7 @@
 			else: echo '<h2>Нет записей.</h2>'; endif; // если записей нет, напишим "простите" ?>	 
 			<?php pagination(); // пагинация, функция нах-ся в function.php ?>
 		</div>
-		<div class="col-xs-12 col-sm-3 col-md-4">
+		<div class="col-xs-12 col-sm-3 col-md-4 page-sidebar">
 			<?php get_sidebar(); ?>	
 		</div>
 	</div>
