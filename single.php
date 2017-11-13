@@ -1,19 +1,30 @@
 <?php get_header(); ?>
+<?php
+	if (defined( 'FW' )){
+		$def_background = 'http://led.joomlamix.ru/wp-content/uploads/2017/11/01b.jpg';
+		$kdv_post_background = fw_get_db_post_option(get_the_ID(), 'kdv_post_img');
+	}
+?>
 <section>
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); // старт цикла ?>
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>> <?php // контэйнер с классами и id ?>
-		<h1><?php the_title(); // заголовок поста ?></h1>
-		<div class="meta">
-			<p>Опубликовано: <?php the_time('F j, Y'); ?> в <?php the_time('g:i a'); ?></p> <?php // дата и время создания ?>
-			<p>Категории: <?php the_category(',') ?></p> <?php // ссылки на категории в которых опубликован пост, через зпт ?>
-			<?php the_tags('<p>Тэги: ', ',', '</p>'); // ссылки на тэги поста ?>
+	<div class="post_header" style="background: url('<?php echo $kdv_post_background['url']; ?>');">
+		<div class="container">
+			<h1><?php the_title(); ?></h1>
 		</div>
-		<?php the_content(); // контент ?>
-	</article>
-<?php endwhile; // конец цикла ?>
-<?php previous_post_link('%link', '<- Предыдущий пост: %title', TRUE); // ссылка на предыдущий пост ?> 
-<?php next_post_link('%link', 'Следующий пост: %title ->', TRUE); // ссылка на следующий пост ?> 
-<?php if (comments_open() || get_comments_number()) comments_template('', true); // если комментирование открыто - мы покажем список комментариев и форму, если закрыто, но кол-во комментов > 0 - покажем только список комментариев ?>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-9 col-md-8 post_body">
+				<?php if ( have_posts() ) while ( have_posts() ) : the_post(); // старт цикла ?>
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>> <?php // контэйнер с классами и id ?>
+					<?php the_post_thumbnail( 'full'); ?>
+					<?php the_content(); // контент ?>
+				</article>
+			<?php endwhile; // конец цикла ?>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-4 page-sidebar">
+				<?php get_sidebar(); ?>
+			</div>
+		</div>
+	</div>
 </section>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

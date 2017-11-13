@@ -1,10 +1,23 @@
 <?php get_header(); ?>
-<section>
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); // старт цикла ?>
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>> <?php // контэйнер с классами и id ?>
-		<?php the_content(); // контент ?>
-	</article>
-<?php endwhile; // конец цикла ?>
+<section class="header_slider">
+<div id="templatemo_slider">
+    <div id = "carousel1" style="width:960px; height:280px;background:none;overflow:scroll; margin-top: 20px">            
+        <!-- All images with class of "cloudcarousel" will be turned into carousel items -->
+        <!-- You can place links around these images -->
+        <a href="" rel="lightbox"><img class="cloudcarousel" src="http://led.joomlamix.ru/wp-content/uploads/2017/11/01.jpg" alt="CSS Templates 1" title="Website Templates 1" /></a>
+        <a href="" rel="lightbox"><img class="cloudcarousel" src="http://led.joomlamix.ru/wp-content/uploads/2017/11/01.jpg" alt="CSS Templates 2" title="Website Templates 2" /></a>
+        <a href="" rel="lightbox"><img class="cloudcarousel" src="http://led.joomlamix.ru/wp-content/uploads/2017/11/01.jpg" alt="CSS Templates 3" title="Website Templates 3" /></a>
+        <a href="" rel="lightbox"><img class="cloudcarousel" src="http://led.joomlamix.ru/wp-content/uploads/2017/11/01.jpg" alt="CSS Templates 4" title="Website Templates 4" /></a>
+        <a href="" rel="lightbox"><img class="cloudcarousel" src="http://led.joomlamix.ru/wp-content/uploads/2017/11/01.jpg" alt="Flash Templates 1" title="Flash Templates 1" /></a>
+        <a href="" rel="lightbox"><img class="cloudcarousel" src="http://led.joomlamix.ru/wp-content/uploads/2017/11/01.jpg" alt="Flash Templates 2" title="Flash Templates 2" /></a>
+
+
+    </div>
+     <center>
+    <input id="slider-left-but" type="button" value="" />
+    <input id="slider-right-but" type="button" value="" />
+    </center>
+</div>
 </section>
 <section class="section " style="padding:60px 0;">
     <div class="container">

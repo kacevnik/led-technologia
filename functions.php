@@ -105,6 +105,7 @@ if (!function_exists('add_scripts')) { // если ф-я уже есть в до
 	    wp_enqueue_script('owl-carousel', get_template_directory_uri().'/js/owl.carousel.min.js','','',true); // jQuery Карусель https://owlcarousel2.github.io/OwlCarousel2/ 
 	    wp_enqueue_script('stellar-paralax', get_template_directory_uri().'/js/stellar.min.js','','',true); // Плагин паралакс https://habrahabr.ru/post/145772/
 	    wp_enqueue_script('tinynav', get_template_directory_uri().'/js/tinynav.min.js','','',true); // Скрипт оптимизации при различных разрешениях экрана
+	    wp_enqueue_script('cloud-carousel', get_template_directory_uri().'/js/cloud-carousel.1.0.5.min.js','','',true); // 3D карусель
 	    wp_enqueue_script('main', get_template_directory_uri().'/js/main.js','','',true); // основные скрипты шаблона
 	}
 }
@@ -117,6 +118,131 @@ if (!function_exists('add_styles')) { // если ф-я уже есть в до�
 	    wp_enqueue_style( 'font', get_template_directory_uri().'/css/font-awesome.min.css' ); //Шрифты
 	    wp_enqueue_style( 'owl-carousel', get_template_directory_uri().'/css/owl.carousel.min.css' ); //Стили для OWL карусели
 		wp_enqueue_style( 'mainstyle', get_template_directory_uri().'/css/style.css' ); // основные стили шаблона
+	}
+}
+
+/******************** Кастомный виджет свежих постов для сайтбара ***************/
+
+add_action('widgets_init', 'kdv_new_widget_last_posts');
+
+function kdv_new_widget_last_posts(){
+	register_widget('KDV_new_widget_last_posts');
+}
+
+class KDV_new_widget_last_posts extends WP_Widget{
+	public function __construct(){
+		$args = array(
+			'name' =>'Свежие записи (Custom)',
+			'description' => 'Виджет шаблона с расширенными настройками'
+		);
+		parent::__construct('kdv-last-posts', '', $args);
+	}
+
+	public function form($instance){
+		$name        = isset($instance['name']) ? $instance['name'] : '';
+		$count       = isset($instance['count']) ? $instance['count'] : 5;
+		$all_checked = isset($instance['all']) ? 'checked=""' : '';
+		$categories  = get_categories();
+		?>
+			<p>
+				<label for="<?php echo $this->get_field_id('name'); ?>">Заголовок</label>
+				<input type="text" class="widefat" id="<?php echo $this->get_field_id('name'); ?>" name="<?php echo $this->get_field_name('name'); ?>" value="<?php echo $name; ?>">
+			</p>
+			<p>
+				<label for="<?php echo $this->get_field_id('count'); ?>">Количество записей:</label>
+				<input class="tiny-text" id="<?php echo $this->get_field_id('count'); ?>" name="<?php echo $this->get_field_name('count'); ?>" type="number" step="1" min="1" value="<?php echo $count; ?>" size="3">
+			</p>
+			<p>
+				<input type="checkbox" <?php echo $all_checked; ?> name="<?php echo $this->get_field_name('all'); ?>" class="checkbox" value="all" id="<?php echo $this->get_field_id('all'); ?>">
+				<label for="<?php echo $this->get_field_id('all'); ?>">Все рубрики</label><br>
+		<?php
+			foreach ($categories as $cat_item) {
+		?>
+				<input type="checkbox" <?php if(is_array($instance['cat']) && in_array($cat_item->cat_ID, $instance['cat'])){echo 'checked=""'; } ?> name="<?php echo $this->get_field_name('cat')?>[]" class="checkbox" value="<?php echo $cat_item->cat_ID; ?>" id="<?php echo $this->get_field_id('cat') . '-' . $cat_item->cat_ID; ?>">
+				<label for="<?php echo $this->get_field_id('cat') . '-' . $cat_item->cat_ID; ?>"><?php echo $cat_item->name; ?></label><br>
+		<?php
+				
+			}
+		?>
+			</p>
+		<?php
+	}
+
+	public function widget($args, $instance){
+		if(!empty($instance['cat']) || $instance['all'] == 'all'){
+			if($instance['all'] == 'all'){
+				$args_posts = array(
+					'numberposts' => $instance['count'],
+					'category'    => 0,
+					'orderby'     => 'date',
+					'order'       => 'DESC',
+					'post_type'   => 'post',
+				);
+				$posts = get_posts($args_posts);				
+			}else if(!empty($instance['cat'])){
+				$str_posts = '';
+				foreach ($instance['cat'] as $cat_inst_id) {
+					$custom_cat = get_category($cat_inst_id);
+					$args_posts = array(
+						'numberposts' => $instance['count'],
+						'category'    => $custom_cat->cat_ID,
+						'orderby'     => 'date',
+						'order'       => 'DESC',
+						'post_type'   => 'post',
+					);
+					$post = get_posts($args_posts);
+					foreach ($post as $posts_item_inst) {
+						$str_posts .= $posts_item_inst->ID.',';
+					}
+				}
+				$str_posts = trim($str_posts, ',');
+				$args_posts_new = array(
+					'numberposts' => $instance['count'],
+					'category'    => 0,
+					'orderby'     => 'date',
+					'order'       => 'DESC',
+					'post_type'   => 'post',
+					'include'     => $str_posts
+				);
+				$posts = get_posts($args_posts_new);
+			}
+			//var_dump($posts);
+		?>
+			<div class="widget">
+		<?php
+			if(!empty($instance['name'])){
+		?>
+				<h2 class="widgettitle"><?php echo $instance['name']; ?></h2>
+		<?php
+			}
+		?>
+				<ul class="recent-posts kdv_custom_list_post">
+		<?php
+			foreach ($posts as $posts_item) {
+		?>
+					<li>
+						<div class="post-thumb media-left">
+            				<a href="<?php echo get_permalink($posts_item->ID); ?>">
+                				<?php echo get_the_post_thumbnail( $posts_item->ID, array(80, 80) ); ?>            
+                			</a>
+        				</div>
+        				<div class="media-body">
+            				<p class="mb-5">
+                				<a href="<?php echo get_permalink($posts_item->ID); ?>"><?php echo $posts_item->post_title; ?></a>
+            				</p>
+            				<span class="color-theme">
+                				<i class="fa fa-calendar mr-5"></i> <?php echo get_the_time('F j, Y', $posts_item->ID); ?>            
+                			</span>
+        				</div>
+					</li>
+		<?php
+			}
+		?>			
+				</ul>
+			</div>
+
+		<?php
+		}
 	}
 }
 
