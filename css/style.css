@@ -586,6 +586,7 @@ footer a {
 
 #offer{
 	background-attachment: fixed;
+    background-size: 100%;
 }
 
 #offer .item{
@@ -835,7 +836,9 @@ footer a {
 }
 
 .header_slider{
-	background: url(../img/1511097.jpg);
+    background: #000 url(../img/led_main_bg.png)no-repeat center 102px;
+    background-size: contain;
+    padding-top: 154px;
 }
 
 

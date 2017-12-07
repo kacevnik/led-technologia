@@ -1,5 +1,11 @@
 <?php get_header(); ?>
-<section class="blog_header" style="background: url('http://led.joomlamix.ru/wp-content/uploads/2017/11/01b.jpg');">
+<?php
+	if (defined( 'FW' )){
+		$kdv_term_background = fw_get_db_term_option(get_query_var('cat'), 'category', 'kdv_category_bg_img');
+	}
+?>
+
+<section class="blog_header" style="background: url('<?php echo $kdv_term_background['url']; ?>');">
 	<div class="container">
 		<h1><?php single_cat_title(); // название категории ?></h1>
 	</div>

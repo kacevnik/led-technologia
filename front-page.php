@@ -150,7 +150,7 @@
 	</div>
 </section>
 
-<section id="offer" data-stellar-background-ratio="0.1" style="background: url('http://led.joomlamix.ru/wp-content/uploads/2017/11/slider01.jpg');">
+<section id="offer" data-stellar-background-ratio="0.1" style="background-image: url('http://led.joomlamix.ru/wp-content/uploads/2017/12/paralax_bg.jpg');">
 	<div class="bg_offer">
 		<div class="container">
 			<h2>Наши приимущества</h2>

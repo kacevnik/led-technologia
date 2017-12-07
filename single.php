@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 <?php
 	if (defined( 'FW' )){
-		$def_background = 'http://led.joomlamix.ru/wp-content/uploads/2017/11/01b.jpg';
 		$kdv_post_background = fw_get_db_post_option(get_the_ID(), 'kdv_post_img');
 	}
 ?>
