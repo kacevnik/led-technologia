@@ -2,32 +2,33 @@
 <?php
     if (defined( 'FW' )){
         $kdv_slogan_header = fw_get_db_settings_option('kdv_slogan_header');
+        $kdv_main_slider_item = fw_get_db_settings_option('kdv_main_slider_item');
     }else{
 
     }
+
 ?>
 <section class="header_slider">
     <div class="title_sub_main">
         <?php echo $kdv_slogan_header; ?>
     </div>
-<div id="templatemo_slider">
-    <div id = "carousel1" style="width:960px; height:280px;background:none;overflow:scroll; margin-top: 20px">            
-        <!-- All images with class of "cloudcarousel" will be turned into carousel items -->
-        <!-- You can place links around these images -->
-        <a href="" rel="lightbox"><img class="cloudcarousel" src="http://led.joomlamix.ru/wp-content/uploads/2017/11/01.jpg" alt="CSS Templates 1" title="Website Templates 1" /></a>
-        <a href="" rel="lightbox"><img class="cloudcarousel" src="http://led.joomlamix.ru/wp-content/uploads/2017/11/01.jpg" alt="CSS Templates 2" title="Website Templates 2" /></a>
-        <a href="" rel="lightbox"><img class="cloudcarousel" src="http://led.joomlamix.ru/wp-content/uploads/2017/11/01.jpg" alt="CSS Templates 3" title="Website Templates 3" /></a>
-        <a href="" rel="lightbox"><img class="cloudcarousel" src="http://led.joomlamix.ru/wp-content/uploads/2017/11/01.jpg" alt="CSS Templates 4" title="Website Templates 4" /></a>
-        <a href="" rel="lightbox"><img class="cloudcarousel" src="http://led.joomlamix.ru/wp-content/uploads/2017/11/01.jpg" alt="Flash Templates 1" title="Flash Templates 1" /></a>
-        <a href="" rel="lightbox"><img class="cloudcarousel" src="http://led.joomlamix.ru/wp-content/uploads/2017/11/01.jpg" alt="Flash Templates 2" title="Flash Templates 2" /></a>
-
-
+    <?php if(count($kdv_main_slider_item)>0){ ?>
+    <div id="templatemo_slider">
+        <div id = "carousel1" style="width:960px; height:280px;background:none;overflow:scroll; margin-top: 20px">            
+            <!-- All images with class of "cloudcarousel" will be turned into carousel items -->
+            <!-- You can place links around these images -->
+            <?php foreach ($kdv_main_slider_item as $item) { ?>
+            <a href="<?php echo $item['link']; ?>" rel="lightbox">
+                <img class="cloudcarousel" src="<?php echo $item['img']['url']; ?>" alt="<?php echo $item['name']; ?>" title="<?php echo $item['title']; ?>" /><span class="slider_item_name"></span>
+            </a>
+            <?php } ?>
+        </div>
+         <center>
+            <input id="slider-left-but" type="button" value="" />
+            <input id="slider-right-but" type="button" value="" />
+        </center>
     </div>
-     <center>
-    <input id="slider-left-but" type="button" value="" />
-    <input id="slider-right-but" type="button" value="" />
-    </center>
-</div>
+    <?php }else{ echo 'Добавьте хотя-бы один слайд!';} ?>
 </section>
 <section class="section " style="padding:60px 0;">
     <div class="container">
