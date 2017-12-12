@@ -1,5 +1,15 @@
 <?php get_header(); ?>
+<?php
+    if (defined( 'FW' )){
+        $kdv_slogan_header = fw_get_db_settings_option('kdv_slogan_header');
+    }else{
+
+    }
+?>
 <section class="header_slider">
+    <div class="title_sub_main">
+        <?php echo $kdv_slogan_header; ?>
+    </div>
 <div id="templatemo_slider">
     <div id = "carousel1" style="width:960px; height:280px;background:none;overflow:scroll; margin-top: 20px">            
         <!-- All images with class of "cloudcarousel" will be turned into carousel items -->
@@ -40,10 +50,10 @@
         				<div class="entry-content">
             				<span class="is-block mb-15">
                 				<span class="mr-10">
-                    				<i class="fa fa-clock-o mr-5"></i>Сеньтябрь 11, 2017                
+                    				<i class="fa fa-clock-o mr-5"></i>Сеньтябрь 11, 2017
                     			</span>
                 				<span>
-                    				<i class="fa fa-comment-o mr-5"></i> 0 Комментарии                
+                    				<i class="fa fa-comment-o mr-5"></i> 0 Комментарии
                     			</span>
             				</span>
             				<h2 class="entry-title h3 mb-10">

@@ -29,25 +29,23 @@
 		'kdv_tap_general_opions' => array(
     		'type' => 'tab',
     		'options' => array(
-        		'kdv_phone_header' => array(
+        		'kdv_main_adress' => array(
 				    'type'  => 'text',
-				    'value' => '8 (926) 321-22-23',
+				    'value' => 'г. Железнодорожный',
 				    'attr'  => array( 'class' => 'custom-class', 'data-foo' => 'bar' ),
-				    'label' => __('Номер телефона в хедере', '{domain}'),
-				    'desc'  => __('Пример: 8 (926) 321-22-23', '{domain}'),
-				    'help'  => __('Укажите номер телефона для связи в верхней части сайта', '{domain}'),
+				    'label' => __('Адрес компании', '{domain}'),
+				    'help'  => __('Укажите адрес компании для шапки сайта', '{domain}'),
 				),
 
-				'kdv_phone_header2' => array(
+				'kdv_header_mail' => array(
 				    'type'  => 'text',
-				    'value' => '8 (926) 321-22-23',
+				    'value' => 'test@test.ru',
 				    'attr'  => array( 'class' => 'custom-class', 'data-foo' => 'bar' ),
-				    'label' => __('Второй номер телефона в хедере', '{domain}'),
-				    'desc'  => __('Пример: 8 (926) 321-22-23', '{domain}'),
-				    'help'  => __('Укажите второй номер телефона для связи в верхней части сайта. Служба потдержки', '{domain}'),
+				    'label' => __('E-mail', '{domain}'),
+				    'help'  => __('Укажите e-mail адрес вашей компании', '{domain}'),
 				),
 
-				'kdv_logo' => array(
+				'kdv_logo_header' => array(
 				    'type'  => 'upload',
 				    'value' => array(
 				        /*
@@ -79,25 +77,50 @@
 				    'extra_mime_types' => array( 'audio/x-aiff, aif aiff' )
 				),
 
-				'kdv_slogan_1' => array(
+				'kdv_header_phone' => array(
 				    'type'  => 'text',
-				    'value' => 'ДОБРО ПОЖАЛОВАТЬ В ASBIS',
+				    'value' => '+7 (926) 156-78-99',
 				    'attr'  => array( 'class' => 'custom-class', 'data-foo' => 'bar' ),
-				    'label' => __('Слоган №1', '{domain}'),
+				    'label' => __('Наш телефон', '{domain}'),
 				    'desc'  => __('', '{domain}'),
-				    'help'  => __('Слоган на главной страрнице', '{domain}'),
+				    'help'  => __('Укажите телефон компании для Header', '{domain}'),
 				),
 
-				'kdv_slogan_2' => array(
+				'kdv_slogan_clock' => array(
 				    'type'  => 'text',
-				    'value' => 'Ознакомтесь с нашими последними курасами',
+				    'value' => 'Пн - Пт: 10:00 - 17:00',
 				    'attr'  => array( 'class' => 'custom-class', 'data-foo' => 'bar' ),
-				    'label' => __('Слоган №2', '{domain}'),
+				    'label' => __('Время работы', '{domain}'),
 				    'desc'  => __('', '{domain}'),
-				    'help'  => __('Нижний слоган на главной страрнице', '{domain}'),
+				    'help'  => __('Укажите время работы офиса компании', '{domain}'),
+				),
+
+				'kdv_header_back_tell' => array(
+	                'type'  => 'switch',
+	                'value' => '1',
+	                'attr'  => array( 'class' => 'custom-class', 'data-foo' => 'bar' ),
+	                'label' => __('Показать кнопку?', '{domain}'),
+	                'desc'  => __('Показать/Скрыть кнопку обратного звонка в Header', '{domain}'),
+	                'left-choice' => array(
+	                    'value' => '0',
+	                    'label' => __('Нет', '{domain}'),
+	                ),
+	                'right-choice' => array(
+	                    'value' => '1',
+	                    'label' => __('Да', '{domain}'),
+	                ),
+	            ),
+
+	            'kdv_slogan_header' => array(
+				    'type'  => 'text',
+				    'value' => 'барнаульский завод светотехники BARLED',
+				    'attr'  => array( 'class' => 'custom-class', 'data-foo' => 'bar' ),
+				    'label' => __('Время работы', '{domain}'),
+				    'desc'  => __('', '{domain}'),
+				    'help'  => __('Укажите слоган компании для Header', '{domain}'),
 				),
     		),
-    		'title' => __('Основные настройки', '{domain}'),
+    		'title' => __('Главная страница', '{domain}'),
     		'attr' => array('class' => 'custom-class', 'data-foo' => 'bar'),
 		),
 		'kdv_tap_gallary_post_new' => array(

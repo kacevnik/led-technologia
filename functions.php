@@ -2,7 +2,8 @@
 include('settings.php');
 register_nav_menus(array( // Регистрация меню
 	'top' => 'Верхнее',
-	'bottom' => 'Внизу'
+	'bottom' => 'Внизу',
+	'follow_me' => 'Социальные ссылки в Header'
 ));
 
 add_theme_support('post-thumbnails'); // Включение миниатюр
